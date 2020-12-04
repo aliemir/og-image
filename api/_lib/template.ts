@@ -46,7 +46,7 @@ export function getHtml(parsedReq: ParsedRequest) {
             <div class="flex font-serif flex-col lg:flex-row">
                 <div class="flex-1 pr-0 lg:pr-12">
                 <h1
-                    class="font-semibold text-gray-800 mb-3 text-6xl break-all"
+                    class="font-semibold text-gray-800 mb-3 mt-3 text-6xl break-all"
                 >
                     <span class="pr-1">${username}'s</span>
                     <p class="text-gray-700 text-5xl mb-3">coding summary</p>
