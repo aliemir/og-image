@@ -11,8 +11,8 @@ html {
 }
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
-    Noto Sans, sans-serif, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
+  font-family: serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
+    Noto Sans, serif, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
 }
 hr {
   height: 0;
@@ -266,7 +266,11 @@ video {
   line-height: 1.5rem;
 }
 .text-5xl {
-  font-size: 3rem;
+  font-size: 3.25rem;
+  line-height: 1;
+}
+.text-6xl {
+  font-size: 3.75rem;
   line-height: 1;
 }
 .leading-6 {

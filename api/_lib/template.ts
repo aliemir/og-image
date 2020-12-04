@@ -1,9 +1,23 @@
+import { readFileSync } from 'fs'
 import { ParsedRequest } from './types'
 import { css } from '../_assets/css'
 import { bgURI } from '../_assets/bg'
 
+const font = readFileSync(
+  `${__dirname}/../_assets/LibreBaskerville-Bold.ttf`
+).toString('base64')
+
 function getCss() {
   return `
+    @font-face {
+        font-family: 'LibreBaskerville';
+        font-style:  normal;
+        font-weight: normal;
+        src: url(data:font/truetype;charset=utf-8;base64,${font}) format('truetype');
+    }
+    * {
+        font-family: 'LibreBaskerville' !important;
+    }
     ${css}
     body {
         background-image: url(${bgURI});
@@ -32,12 +46,11 @@ export function getHtml(parsedReq: ParsedRequest) {
             <div class="flex font-serif flex-col lg:flex-row">
                 <div class="flex-1 pr-0 lg:pr-12">
                 <h1
-                    class="text-5xl sm:text-6xl lg:text-7xl font-semibold text-gray-800 mb-3 text-6xl break-all"
+                    class="font-semibold text-gray-800 mb-3 text-6xl break-all"
                 >
-                    <span class="pr-1">${username}</span
-                    ><span class="text-gray-700 text-5xl"
-                    >'s coding summary for 2020.</span
-                    >
+                    <span class="pr-1">${username}'s</span>
+                    <p class="text-gray-700 text-5xl mb-3">coding summary</p>
+                    <p class="text-gray-700 text-5xl">for 2020.</p>
                 </h1>
                 <p class="text-base sm:text-lg xl:text-xl text-gray-400 text-justify">
                     Wonder what you achieved in 2020? Get your summary now!
